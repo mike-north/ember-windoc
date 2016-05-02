@@ -1,6 +1,24 @@
-# Ember-windoc
+# ember-windoc
 
-This README outlines the details of collaborating on this Ember addon.
+Easy, fastboot-friendly consumption of `window` and `document` functionality in Ember.js apps.
+
+
+## TODO
+
+### Events
+
+- [ ] Resize events
+- [ ] Orientation change events
+- [ ] Scroll events
+
+### Operations
+- [ ] Scroll component into view
+
+### Properties
+- [ ] Window
+   - [ ] scrollX
+   - [ ] scrollY
+
 
 ## Installation
 
