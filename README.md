@@ -1,4 +1,4 @@
-# ember-windoc
+# ember-windoc [![Build Status](https://travis-ci.org/levanto-financial/ember-windoc.svg?branch=master)](https://travis-ci.org/levanto-financial/ember-windoc)
 
 Easy, fastboot-friendly consumption of `window` and `document` functionality in Ember.js apps.
 
