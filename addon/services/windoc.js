@@ -1,3 +1,4 @@
+/*global FastBoot:true*/
 import Ember from 'ember';
 
 const {
@@ -46,8 +47,14 @@ const WINDOW_EVENTS = [{
   ]
 }];
 
+const FAKE_WINDOW = {
+  addEventListener() {},
+  setInterval() {},
+  clearInterval() {}
+};
+
 const serviceCfg = {
-  w: window,
+  w: typeof FastBoot === 'undefined' ? window : FAKE_WINDOW,
   init() {
     this._super(...arguments);
     WINDOW_EVENTS.forEach((evtInfo) => {
