@@ -2,25 +2,37 @@
 
 Easy, fastboot-friendly consumption of `window` and `document` functionality in Ember.js apps.
 
+![ember-windoc](http://i63.tinypic.com/108ifdw.png)
 
-## TODO
+## Use
 
-### Events
+You may install this addon with ember-cli
+```sh
+ember install ember-windoc
+```
 
-- [ ] Resize events
-- [ ] Orientation change events
-- [ ] Scroll events
+Then, simply inject the `windoc` service onto any ember object, and build computed properties off of relevant viewport measurements
 
-### Operations
-- [ ] Scroll component into view
+**app/components/my-component.js**
+```js
+import Ember from 'ember';
 
-### Properties
-- [ ] Window
-   - [ ] scrollX
-   - [ ] scrollY
+const { Component, inject } = Ember;
 
+export default Component.extend({
+  windoc: inject.service()
+});
 
-## Installation
+```
+
+**app/templates/components/my-component.hbs**
+```js
+{{windoc.scrollRight}}
+```
+
+The image at the top of this readme is a great guide in terms of useful properties to bind to.
+
+## Contributing
 
 * `git clone` this repository
 * `npm install`
