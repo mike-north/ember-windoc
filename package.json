@@ -1,7 +1,7 @@
 {
   "name": "ember-windoc",
   "version": "0.1.2",
-  "description": "The default blueprint for ember-cli addons.",
+  "description": "Window and document events (scroll, resize, move, etc...) the Ember.js way",
   "directories": {
     "doc": "doc",
     "test": "tests"
