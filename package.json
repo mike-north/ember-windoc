@@ -1,6 +1,6 @@
 {
   "name": "ember-windoc",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Window and document events (scroll, resize, move, etc...) the Ember.js way",
   "directories": {
     "doc": "doc",
