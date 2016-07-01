@@ -42,7 +42,13 @@
     "loader.js": "^4.0.1"
   },
   "keywords": [
-    "ember-addon"
+    "ember-addon",
+    "window",
+    "scroll",
+    "resize",
+    "event",
+    "document",
+    "fastboot"
   ],
   "dependencies": {
     "ember-cli-babel": "^5.1.6"
