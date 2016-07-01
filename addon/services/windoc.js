@@ -5,7 +5,8 @@ const {
   computed,
   Service,
   typeOf,
-  Evented
+  Evented,
+  run: { next }
 } = Ember;
 
 const WINDOW_PROPERTIES = [
@@ -61,7 +62,7 @@ const serviceCfg = {
       this.w.addEventListener(evtInfo.event, (evt) => {
         if (evtInfo.invalidateProperties &&
           typeOf(evtInfo.invalidateProperties) === 'array') {
-          Ember.run.next(() => {
+          next(() => {
             evtInfo.invalidateProperties.forEach((p) => {
               this.notifyPropertyChange(p);
               this.trigger(evtInfo.event, evt);
@@ -89,7 +90,7 @@ const serviceCfg = {
       this._cancelRefreshPollLoop();
     }
     this._refreshPollLoop = this.get('w').setInterval(() => {
-      Ember.run.next(() => {
+      next(() => {
         PROPERTIES_TO_CHANGE_ON_INTERVAL.forEach((p) => {
           this.notifyPropertyChange(p);
         });
