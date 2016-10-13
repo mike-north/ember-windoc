@@ -1,37 +1,36 @@
 language: node_js
 node_js:
-- '0.12'
+  - '4'
 sudo: false
 cache:
   directories:
-  - node_modules
+    - node_modules
 env:
-- EMBER_TRY_SCENARIO=default
-- EMBER_TRY_SCENARIO=ember-1.13
-- EMBER_TRY_SCENARIO=ember-release
-- EMBER_TRY_SCENARIO=ember-beta
-- EMBER_TRY_SCENARIO=ember-canary
+  - EMBER_TRY_SCENARIO=default
+  - EMBER_TRY_SCENARIO=ember-1.13
+  - EMBER_TRY_SCENARIO=ember-release
+  - EMBER_TRY_SCENARIO=ember-beta
+  - EMBER_TRY_SCENARIO=ember-canary
 matrix:
   fast_finish: true
   allow_failures:
-  - env: EMBER_TRY_SCENARIO=ember-canary
+    - env: EMBER_TRY_SCENARIO=ember-canary
 before_install:
-- export PATH=/usr/local/phantomjs-2.0.0/bin:$PATH
-- npm config set spin false
-- npm install -g npm@^2
+  - npm config set spin false
+  - npm install -g bower
+  - bower --version
+  - npm install phantomjs-prebuilt
+  - node_modules/phantomjs-prebuilt/bin/phantomjs --version
 install:
-- npm install -g bower
-- npm install
-- bower install
+  - npm install
+  - bower install
 script:
-- ember try $EMBER_TRY_SCENARIO test
-notifications:
-  slack:
-    secure: Z4NJ6lC5z0jHGdh5k2mzNgIPe+S5Hrt826XL6aREQ2KZZE/crmHHx/2j7XpRZa1yRDB/T3unIdAidE1h26mR6yus7gxetGYu/PkWZtd/r6AYLX5DGoifHr7nNuOweCy4yNrqF2WcXyvc8KJE73wj65Hs3+CMLl/uudGh2Q2SZqcGp8sPl9CaiwdYRGo65Uk0RKSLLShCPBPqKljpNLEKbCXWc24HgH6ondtWaeN5zuk16Fw/s/dEmmL6xZw8NAKXWedcl50hy+/3JIowZOYcVtkhqc9aqbKSVd4B2wCuMEFsGRDkmqd1vKF1FskrSujJK1uFGiuJYYwpjIQGaYmOpWEC7U2TeKd7Y+t84psfLKXjln+LPTgtEjf+FEkqThda1qAPRaxxrCfH9Lc6uvB+Ss9sp9hc1ORFcAnYw/Qy3bbGIW/w3rFXUQi9GXsEogNH1/pedgFZV+LZYryC6O6w0Fhs+N5EpCk/NeUDX4ZpyR1V7i7fxkvdo6mE66paTeDQRcvDivC0wUZabO781ze/BiVptqKI9AvUUOrndiiSkxpU0ItxVFewAuITMaMmqL0z5zj/6PXAF83Jl60Jwlb66sqmhRIrto/aCA+IGsd72LLMecq3Jim9N5E1w9wyRDCdQ7H7TntQKFBN5eXIpwca5EuqcksBCeqiT3AhRv13jvw=
+  - ember try:one $EMBER_TRY_SCENARIO test --skip-cleanup
 deploy:
   provider: heroku
   api_key:
-    secure: Sx8sT0IbRCe+u0coJGDLDGUxjnXjfdciCZSCpjotN5l6CrV5zNtKkZP/HWfjYdb8hlcUtvfach3jNUArg4pYNK7m+16d/0JGGjG4eiOPxkk0n5B3anXSL/NUMgtsEJWAxLioD02Zy4tN65xkODM9Jw8zT7V21yB9106OOIaFwqlhZ5wSWIq+VaGji3sVYB18sWhnvvZd4+5nJWY8a5DAH4RzXDSSQe6ZdLlvrG/qglvtUsCfrx6//zHOoYBP56FRFqCIioY168SF54TRQtA4vuHoaDlw15zvVZzuHhlzCK7bnMsM6fnZJXhvNyFBduxaIggnRkHef1ib30Rx5rm6+lCeGINBYD+4wnibZ2IxIRtsCXntjZEZhDJkR801/+VhZKM012LryW/f0y2wa6Mj2uVRtCfWVA2cHtNjAejA+kADPVNbI7slEqI+tM6IdCOAmZ4PygpobetmvrDgkOV3anvZfP8vCzT5yi92xu5SiDiBDC5e0MYh1QdFUIFCqsle0KBgSMgAUU1v5c6WJQeFCpsps9jwZTD6Td9Qrsj1n/h5Mq9SzHmF7wvH8SAHslHiz3D7MRaQ5TFgmBtn4i9XMUYToOuNJ/EACc7fcZgAZ4tG98vnYl0fIUmrQKqDPS+701RHthGJhsm9x68O766KF5DanE7vUc0BR4IrnI+gYkE=
+    secure: YESh7S940aMFqSKPp8ymIOaqMwDm6RwyS6aJ2EXDx1zi/J1JCnK6XHm4fthK+F9piH6/VxpVpmww8xm/e5YfVAeO0m7klAmnNgDnd+89nZR7SQqawRUe6oSHi2apXoiyEzEGVbc8UEoyWja8X99oiSIY3nPqwXJ7BNA5kv9OgPAcB9wlrMSJZHC9qzefZe/za2SLtNI4KRflzA6u7nUBeiL0uooLSJafG1jYEMT0IlMgJEBtP2KRa6Tx2cltWuXxwWkvrvCAwFn6iFIoXBWcIjptqsQtcL6ImdniPScmb8uD85EDSHdfIMENTyzVEo0b4CmBuH+ZKrSgbLNZUfT3+Stv550b4NCr14obPujaE9AyAuhmGkBcT1L4cwLa+N7c5a70irRnGSusr5yOhq/g+1kQlRj5EC9ienExVdN1sPTM8eMR323SHa/cdNbdirqQ3T84cz+u4ZmVdGDmh/Ln7tHW+g4vbdPBGF1jnkZWrWeVDaZ8sjCCJSTjxu6PJEWGxS8FQb+kTj2ubDiU8vXtVduRbq4zBG9FvfPSu125zy/GAKVn0VhZa5pxxJsZKxusaNYiJHXRfyQD1W2MRWECwU0TtcZuGywZp0H9G/V8jEhmYdNNiOn5QsGkxRxy9TkRVeAh0bmdlRKyOB3e8BdrISjKNPHaLvBXThdD8PuCxE4=
   app: ember-windoc
   on:
     repo: levanto-financial/ember-windoc
+    branch: master
