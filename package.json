@@ -11,7 +11,7 @@
     "start": "ember server",
     "test": "ember try:testall"
   },
-  "repository": "https://github.com/levanto-financial/ember-windoc",
+  "repository": "https://github.com/mike-north/ember-windoc",
   "engines": {
     "node": ">= 0.10.0"
   },
