@@ -18,84 +18,63 @@ const WINDOW_PROPERTIES = [
   'screenY'
 ];
 
-const POLL_PROPERTY_INTERVAL = 250; // ms
 const PROPERTIES_TO_CHANGE_ON_INTERVAL = [
   'screenX',
-  'screenY'
+  'screenY',
+  'scrollLeft',
+  'scrollTop'
 ];
 
-const WINDOW_EVENTS = [{
-  event: 'resize',
-  invalidateProperties: [
-    'innerWidth',
-    'innerHeight',
-    'outerWidth',
-    'outerHeight',
-    'scrollHeight',
-    'scrollWidth',
-    'scrollLeft',
-    'scrollTop',
-    'clientWidth',
-    'clientHeight',
-    'screenY',
-    'screenX'
-  ]
-}, {
-  event: 'scroll',
-  invalidateProperties: [
-    'scrollLeft',
-    'scrollTop'
-  ]
-}];
+const PROPERTIES_TO_CHANGE_ON_WINDOW_RESIZE = [
+  'innerWidth',
+  'innerHeight',
+  'outerWidth',
+  'outerHeight',
+  'scrollHeight',
+  'scrollWidth',
+  'scrollLeft',
+  'scrollTop',
+  'clientWidth',
+  'clientHeight',
+  'screenY',
+  'screenX'
+];
 
 const FAKE_WINDOW = {
   addEventListener() {},
-  setInterval() {},
-  clearInterval() {}
+  removeEventListener() {},
+  requestAnimationFrame() {},
+  cancelAnimationFrame() {}
 };
 
 const serviceCfg = {
   w: typeof FastBoot === 'undefined' ? window : FAKE_WINDOW,
+
   init() {
     this._super(...arguments);
-    WINDOW_EVENTS.forEach((evtInfo) => {
-      this.w.addEventListener(evtInfo.event, (evt) => {
-        if (evtInfo.invalidateProperties &&
-          typeOf(evtInfo.invalidateProperties) === 'array') {
-          next(() => {
-            evtInfo.invalidateProperties.forEach((p) => {
-              this.notifyPropertyChange(p);
-              this.trigger(evtInfo.event, evt);
-            });
-          });
-        }
+    this.get('w').addEventListener('resize', this._onWindowResize.bind(this));
+    this._refreshPollLoop();
+  },
+
+  willDestroy() {
+    this.get('w').cancelAnimationFrame(this._rpid);
+    this.get('w').removeEventListener('resize', this._onWindowResize);
+  },
+
+  _onWindowResize(evt) {
+    PROPERTIES_TO_CHANGE_ON_WINDOW_RESIZE.forEach((prop) => {
+      next(() => {
+        this.notifyPropertyChange(prop);
+        this.trigger('resize', evt);
       });
     });
-
-    this._startRefreshPollLoop();
   },
 
-  destroy() {
-    this._cancelRefreshPollLoop();
-    this._super(...arguments);
-  },
-
-  _cancelRefreshPollLoop() {
-    this.get('w').clearInterval(this._refreshPollLoop);
-    this._refreshPollLoop = null;
-  },
-
-  _startRefreshPollLoop() {
-    if (this._refreshPollLoop) {
-      this._cancelRefreshPollLoop();
-    }
-    this._refreshPollLoop = this.get('w').setInterval(() => {
-      next(() => {
-        PROPERTIES_TO_CHANGE_ON_INTERVAL.forEach((p) => {
-          this.notifyPropertyChange(p);
-        });
-      });
-    }, POLL_PROPERTY_INTERVAL);
+  _refreshPollLoop() {
+    PROPERTIES_TO_CHANGE_ON_INTERVAL.forEach((p) => {
+      next(() => this.notifyPropertyChange(p));
+    });
+    this._rpid = this.get('w').requestAnimationFrame(() => this._refreshPollLoop());
   },
 
   clientHeight: computed(function() {

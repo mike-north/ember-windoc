@@ -4,9 +4,7 @@ import moduleForAcceptance from '../../tests/helpers/module-for-acceptance';
 moduleForAcceptance('Acceptance | index');
 
 test('visiting /index', function(assert) {
-  visit('/');
-
-  andThen(function() {
+  visit('/').then(function() {
     assert.equal(currentURL(), '/');
     assert.equal(find('.scroll-height').text(), `${document.body.scrollHeight}`, 'Correct scrollHeight');
     assert.equal(find('.scroll-width').text(), `${document.body.scrollWidth}`, 'Correct scrollWidth');

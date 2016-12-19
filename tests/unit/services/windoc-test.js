@@ -1,4 +1,7 @@
 import { moduleFor, test } from 'ember-qunit';
+import Ember from 'ember';
+
+const { run } = Ember;
 
 moduleFor('service:windoc', 'Unit | Service | windoc', {
   // Specify the other units that are required for this test.
@@ -10,7 +13,7 @@ test('it exists', function(assert) {
   assert.ok(service);
 });
 
-test('adds a single resize and a single scroll event listener', function(assert) {
+test('adds a single resize event listener', function(assert) {
   let eventCounts = { total: 0 };
   let canceledId = null;
 
@@ -20,20 +23,23 @@ test('adds a single resize and a single scroll event listener', function(assert)
         eventCounts[evtType] = (eventCounts[evtType] || 0) + 1;
         eventCounts.total++;
       },
-      setInterval() {
+      removeEventListener(evtType) {
+        eventCounts[evtType] = (eventCounts[evtType] || 0) - 1;
+        eventCounts.total--;
+      },
+      requestAnimationFrame() {
         return 123;
       },
-      clearInterval(x) {
+      cancelAnimationFrame(x) {
         canceledId = x;
       }
     }
   });
 
   assert.equal(eventCounts.resize, 1, 'One resize listener');
-  assert.equal(eventCounts.scroll, 1, 'One scroll listener');
-  assert.equal(eventCounts.total, 2, 'Three total listeners');
-  service._cancelRefreshPollLoop();
-  assert.equal(canceledId, 123, 'canceling poll task clears interval');
+  assert.equal(eventCounts.total, 1, 'One listener in total');
+  run(() => service.destroy());
+  assert.equal(canceledId, 123, 'destroying service cancels raf');
 });
 
 test('retrieves basic properties from correct places', function(assert) {
@@ -50,8 +56,9 @@ test('retrieves basic properties from correct places', function(assert) {
         }
       },
       addEventListener() { },
-      setInterval() { },
-      clearInterval() { }
+      removeEventListener() { },
+      requestAnimationFrame() { },
+      cancelAnimationFrame() { }
     }
   });
 
@@ -78,8 +85,9 @@ test('retrieves secondary properties from correct places', function(assert) {
         }
       },
       addEventListener() { },
-      setInterval() { },
-      clearInterval() { }
+      removeEventListener() { },
+      requestAnimationFrame() { },
+      cancelAnimationFrame() { }
     }
   });
 
