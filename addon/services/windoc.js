@@ -1,4 +1,4 @@
-/*global FastBoot:true*/
+/* global FastBoot:true*/
 import Ember from 'ember';
 
 const {
@@ -60,8 +60,8 @@ const serviceCfg = {
     this._super(...arguments);
     WINDOW_EVENTS.forEach((evtInfo) => {
       this.w.addEventListener(evtInfo.event, (evt) => {
-        if (evtInfo.invalidateProperties &&
-          typeOf(evtInfo.invalidateProperties) === 'array') {
+        if (evtInfo.invalidateProperties
+          && typeOf(evtInfo.invalidateProperties) === 'array') {
           next(() => {
             evtInfo.invalidateProperties.forEach((p) => {
               this.notifyPropertyChange(p);
@@ -105,20 +105,20 @@ const serviceCfg = {
     return this.get('w.document.documentElement.clientWidth') || 0;
   }).volatile(),
   scrollTop: computed(function() {
-    return this.get('w.document.documentElement.scrollTop') ||
-      this.get('w.document.body.scrollTop') || 0;
+    return this.get('w.document.documentElement.scrollTop')
+      || this.get('w.document.body.scrollTop') || 0;
   }).volatile(),
   scrollLeft: computed(function() {
-    return this.get('w.document.documentElement.scrollLeft') ||
-      this.get('w.document.body.scrollLeft') || 0;
+    return this.get('w.document.documentElement.scrollLeft')
+      || this.get('w.document.body.scrollLeft') || 0;
   }).volatile(),
   scrollHeight: computed(function() {
-    return this.get('w.document.documentElement.scrollHeight') ||
-      this.get('w.document.body.scrollHeight') || 0;
+    return this.get('w.document.documentElement.scrollHeight')
+      || this.get('w.document.body.scrollHeight') || 0;
   }).volatile(),
   scrollWidth: computed(function() {
-    return this.get('w.document.documentElement.scrollWidth') ||
-      this.get('w.document.body.scrollWidth') || 0;
+    return this.get('w.document.documentElement.scrollWidth')
+      || this.get('w.document.body.scrollWidth') || 0;
   }).volatile(),
 
   scrollRight: computed('scrollLeft', 'scrollWidth', 'clientWidth', function() {
