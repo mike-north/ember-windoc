@@ -1,36 +1,41 @@
+---
 language: node_js
 node_js:
-  - '4'
+  - "6"
+
 sudo: false
+
 cache:
-  directories:
-    - node_modules
+  yarn: true
+
 env:
-  - EMBER_TRY_SCENARIO=default
-  - EMBER_TRY_SCENARIO=ember-1.13
+  # we recommend testing LTS's and latest stable release (bonus points to beta/canary)
+  - EMBER_TRY_SCENARIO=ember-lts-2.4
+  - EMBER_TRY_SCENARIO=ember-lts-2.8
   - EMBER_TRY_SCENARIO=ember-release
   - EMBER_TRY_SCENARIO=ember-beta
   - EMBER_TRY_SCENARIO=ember-canary
+  - EMBER_TRY_SCENARIO=ember-default
+
 matrix:
   fast_finish: true
   allow_failures:
     - env: EMBER_TRY_SCENARIO=ember-canary
+
 before_install:
-  - npm config set spin false
-  - npm install -g bower
-  - bower --version
-  - npm install phantomjs-prebuilt
-  - node_modules/phantomjs-prebuilt/bin/phantomjs --version
+  - curl -o- -L https://yarnpkg.com/install.sh | bash
+  - export PATH=$HOME/.yarn/bin:$PATH
+  - yarn global add phantomjs-prebuilt
+  - yarn global add greenkeeper-lockfile@1
+  - phantomjs --version
+
+before_script: greenkeeper-lockfile-update
+after_script: greenkeeper-lockfile-upload
+
 install:
-  - npm install
-  - bower install
+  - yarn install --no-lockfile
+
 script:
-  - ember try:one $EMBER_TRY_SCENARIO test --skip-cleanup
-deploy:
-  provider: heroku
-  api_key:
-    secure: YESh7S940aMFqSKPp8ymIOaqMwDm6RwyS6aJ2EXDx1zi/J1JCnK6XHm4fthK+F9piH6/VxpVpmww8xm/e5YfVAeO0m7klAmnNgDnd+89nZR7SQqawRUe6oSHi2apXoiyEzEGVbc8UEoyWja8X99oiSIY3nPqwXJ7BNA5kv9OgPAcB9wlrMSJZHC9qzefZe/za2SLtNI4KRflzA6u7nUBeiL0uooLSJafG1jYEMT0IlMgJEBtP2KRa6Tx2cltWuXxwWkvrvCAwFn6iFIoXBWcIjptqsQtcL6ImdniPScmb8uD85EDSHdfIMENTyzVEo0b4CmBuH+ZKrSgbLNZUfT3+Stv550b4NCr14obPujaE9AyAuhmGkBcT1L4cwLa+N7c5a70irRnGSusr5yOhq/g+1kQlRj5EC9ienExVdN1sPTM8eMR323SHa/cdNbdirqQ3T84cz+u4ZmVdGDmh/Ln7tHW+g4vbdPBGF1jnkZWrWeVDaZ8sjCCJSTjxu6PJEWGxS8FQb+kTj2ubDiU8vXtVduRbq4zBG9FvfPSu125zy/GAKVn0VhZa5pxxJsZKxusaNYiJHXRfyQD1W2MRWECwU0TtcZuGywZp0H9G/V8jEhmYdNNiOn5QsGkxRxy9TkRVeAh0bmdlRKyOB3e8BdrISjKNPHaLvBXThdD8PuCxE4=
-  app: ember-windoc
-  on:
-    repo: levanto-financial/ember-windoc
-    branch: master
+  # Usually, it's ok to finish the test scenario without reverting
+  #  to the addon's original dependency state, skipping "cleanup".
+  - node_modules/.bin/ember try:one $EMBER_TRY_SCENARIO test --skip-cleanup
