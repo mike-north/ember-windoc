@@ -39,7 +39,7 @@
     "ember-sublime": "0.0.9",
     "eslint-plugin-ember-suave": "^1.0.0",
     "greenkeeper-lockfile": "^1.2.1",
-    "loader.js": "^4.2.3"
+    "loader.js": "^4.5.1"
   },
   "keywords": [
     "ember-addon",
