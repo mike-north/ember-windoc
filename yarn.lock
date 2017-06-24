@@ -3840,9 +3840,9 @@ livereload-js@^2.2.2:
   version "2.2.2"
   resolved "https://registry.yarnpkg.com/livereload-js/-/livereload-js-2.2.2.tgz#6c87257e648ab475bc24ea257457edcc1f8d0bc2"
 
-loader.js@^4.2.3:
-  version "4.4.0"
-  resolved "https://registry.yarnpkg.com/loader.js/-/loader.js-4.4.0.tgz#02bf55650b78afee5e9d8cf972efd484faa3b2c1"
+loader.js@4.5.1:
+  version "4.5.1"
+  resolved "https://registry.yarnpkg.com/loader.js/-/loader.js-4.5.1.tgz#c15ab15a6b8376bd4fbf7ea56f8d76cc557331da"
 
 locate-path@^2.0.0:
   version "2.0.0"
