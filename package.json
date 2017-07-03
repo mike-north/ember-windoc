@@ -51,7 +51,7 @@
     "fastboot"
   ],
   "dependencies": {
-    "ember-cli-babel": "^6.0.0"
+    "ember-cli-babel": "^6.5.1"
   },
   "ember-addon": {
     "configPath": "tests/dummy/config",
