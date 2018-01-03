@@ -1,7 +1,6 @@
-import Ember from 'ember';
-
-const { Component, inject } = Ember;
+import { inject as service } from '@ember/service';
+import Component from '@ember/component';
 
 export default Component.extend({
-  windoc: inject.service()
+  windoc: service()
 });

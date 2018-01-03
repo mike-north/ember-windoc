@@ -1,6 +1,4 @@
-import Ember from 'ember';
-
-const { Helper: { helper } } = Ember;
+import { helper } from '@ember/component/helper';
 
 export function roundFloat(params/* , hash*/) {
   return Math.round(1000 * params[0]) / 1000;
