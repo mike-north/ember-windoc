@@ -1,7 +1,5 @@
+import { run } from '@ember/runloop';
 import { moduleFor, test } from 'ember-qunit';
-import Ember from 'ember';
-
-const { run } = Ember;
 
 moduleFor('service:windoc', 'Unit | Service | windoc', {
   // Specify the other units that are required for this test.

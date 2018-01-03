@@ -1,13 +1,10 @@
 /* global FastBoot:true*/
-import Ember from 'ember';
+import { computed } from '@ember/object';
 
-const {
-  computed,
-  Service,
-  typeOf,
-  Evented,
-  run: { next }
-} = Ember;
+import Service from '@ember/service';
+import { typeOf } from '@ember/utils';
+import Evented from '@ember/object/evented';
+import { next } from '@ember/runloop';
 
 const WINDOW_PROPERTIES = [
   'innerHeight',
