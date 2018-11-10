@@ -1,6 +1,7 @@
-# ember-windoc [![Build Status](https://travis-ci.org/mike-north/ember-windoc.svg?branch=master)](https://travis-ci.org/mike-north/ember-windoc)
+# ember-windoc 
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/mike-north/ember-windoc.svg)](https://greenkeeper.io/)
+[![Build Status](https://travis-ci.org/mike-north/ember-windoc.svg?branch=master)](https://travis-ci.org/mike-north/ember-windoc)
+[![Version](https://img.shields.io/npm/v/ember-windoc.svg)](https://www.npmjs.com/package/ember-windoc)
 
 Easy, fastboot-friendly consumption of `window` and `document` functionality in Ember.js apps.
 
