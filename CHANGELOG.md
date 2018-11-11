@@ -1,3 +1,10 @@
+## [0.3.1](https://github.com/mike-north/ember-windoc/compare/v0.3.0...v0.3.1) (2018-11-11)
+
+
+### Bug Fixes
+
+* **deps:** update dependency ember-cli-babel to v7 ([f42e71f](https://github.com/mike-north/ember-windoc/commit/f42e71f))
+
 # [0.3.0](https://github.com/mike-north/ember-windoc/compare/v0.2.0...v0.3.0) (2018-11-10)
 
 
