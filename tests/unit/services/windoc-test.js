@@ -1,6 +1,7 @@
 import { run } from '@ember/runloop';
 import { moduleFor, test } from 'ember-qunit';
 
+/* eslint-disable-next-line ember/no-restricted-resolver-tests */
 moduleFor('service:windoc', 'Unit | Service | windoc', {
   // Specify the other units that are required for this test.
   // needs: ['service:foo']
