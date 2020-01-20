@@ -18,7 +18,7 @@
     invariant "^2.2.4"
     semver "^5.5.0"
 
-"@babel/core@^7.0.0", "@babel/core@^7.3.3", "@babel/core@^7.3.4", "@babel/core@^7.6.2", "@babel/core@^7.7.0":
+"@babel/core@^7.0.0", "@babel/core@^7.3.3", "@babel/core@^7.3.4", "@babel/core@^7.7.0", "@babel/core@^7.7.2":
   version "7.8.3"
   resolved "https://registry.yarnpkg.com/@babel/core/-/core-7.8.3.tgz#30b0ebb4dd1585de6923a0b4d179e0b9f5d82941"
   integrity sha512-4XFkf8AwyrEG7Ziu3L2L0Cv+WyY47Tcsp70JFmpftbAA1K7YL/sgE9jh9HyNj08Y/U50ItUchpN0w6HxAoX1rA==
@@ -4701,17 +4701,6 @@ ember-cli-babel@^7.0.0, ember-cli-babel@^7.11.0, ember-cli-babel@^7.13.2:
     ensure-posix-path "^1.0.2"
     semver "^5.5.0"
 
-ember-cli-broccoli-sane-watcher@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/ember-cli-broccoli-sane-watcher/-/ember-cli-broccoli-sane-watcher-3.0.0.tgz#dc1812c047e1ceec4413d3c41b51a9ffc61b4cfe"
-  integrity sha512-sLn+wy6FJpGMHtSwAGUjQK3nJFvw2b6H8bR2EgMIXxkUI3DYFLi6Xnyxm02XlMTcfTxF10yHFhHJe0O+PcJM7A==
-  dependencies:
-    broccoli-slow-trees "^3.0.1"
-    heimdalljs "^0.2.1"
-    heimdalljs-logger "^0.1.7"
-    rsvp "^3.0.18"
-    sane "^4.0.0"
-
 ember-cli-dependency-checker@3.2.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/ember-cli-dependency-checker/-/ember-cli-dependency-checker-3.2.0.tgz#9202ad9e14d6fda33cffc22a11c343c2a8885330"
@@ -4924,12 +4913,12 @@ ember-cli-version-checker@^3.0.0, ember-cli-version-checker@^3.0.1, ember-cli-ve
     resolve-package-path "^1.2.6"
     semver "^5.6.0"
 
-ember-cli@3.14.0:
-  version "3.14.0"
-  resolved "https://registry.yarnpkg.com/ember-cli/-/ember-cli-3.14.0.tgz#9a142da77aa8c95e0bc2c70acc67c9809e9e45cf"
-  integrity sha512-ZZEArSq8ynU6FbVAQnS2Nbx2yr73EgYsAngOHKOGoJwa6YEs3LFh4lHjYsxF26Bt245lH83WnehRcdlLssNF3w==
+ember-cli@3.15.1:
+  version "3.15.1"
+  resolved "https://registry.yarnpkg.com/ember-cli/-/ember-cli-3.15.1.tgz#389604474c40f02870432659072304f192db07c5"
+  integrity sha512-KBL6ylTpYD6k0B2iHMvdgNnbKCdFnOHzruosQqTmbHpyJljVE1sLsTP8ErROH/PnbFzc1vZg1qQcf6tHRvyTrw==
   dependencies:
-    "@babel/core" "^7.6.2"
+    "@babel/core" "^7.7.2"
     "@babel/plugin-transform-modules-amd" "^7.5.0"
     amd-name-resolver "^1.3.1"
     babel-plugin-module-resolver "^3.2.0"
@@ -4963,7 +4952,6 @@ ember-cli@3.14.0:
     core-object "^3.1.5"
     dag-map "^2.0.2"
     diff "^4.0.1"
-    ember-cli-broccoli-sane-watcher "^3.0.0"
     ember-cli-is-package-missing "^1.0.0"
     ember-cli-lodash-subset "^2.0.1"
     ember-cli-normalize-entity-name "^1.0.0"
@@ -5001,7 +4989,7 @@ ember-cli@3.14.0:
     nopt "^3.0.6"
     npm-package-arg "^6.1.1"
     p-defer "^3.0.0"
-    portfinder "^1.0.23"
+    portfinder "^1.0.25"
     promise-map-series "^0.2.3"
     promise.prototype.finally "^3.1.1"
     quick-temp "^0.1.8"
@@ -5011,7 +4999,7 @@ ember-cli@3.14.0:
     sane "^4.1.0"
     semver "^6.3.0"
     silent-error "^1.1.1"
-    sort-package-json "^1.22.1"
+    sort-package-json "^1.23.1"
     symlink-or-copy "^1.2.0"
     temp "0.9.0"
     testem "^2.17.0"
@@ -5103,10 +5091,10 @@ ember-source-channel-url@^2.0.1:
   dependencies:
     got "^8.0.1"
 
-ember-source@3.15.0:
-  version "3.15.0"
-  resolved "https://registry.yarnpkg.com/ember-source/-/ember-source-3.15.0.tgz#f6500c6d289ce58231bf1e6695c4974df2be7390"
-  integrity sha512-daTELJBDMGqAmQb/Puxdk1YR204/zs1DEiEMQWlqbtmhphAoDUbGi9ifJu20ajP/IcOCWw9Vp7aPzguTohWF7w==
+ember-source@3.16.0:
+  version "3.16.0"
+  resolved "https://registry.yarnpkg.com/ember-source/-/ember-source-3.16.0.tgz#c899ccac6783e218f12774139b1e6c3d2fc4c16b"
+  integrity sha512-zotw+jrvlV/Fdq0fwL04jdFsxtHBo+0YtMKVvaNbSWeV97DrULSdnBQ91Sq1KZ+9ueBbClngHF4wXJmlIwqb8g==
   dependencies:
     "@babel/helper-module-imports" "^7.0.0"
     "@babel/plugin-transform-block-scoping" "^7.6.2"
@@ -5115,6 +5103,7 @@ ember-source@3.15.0:
     babel-plugin-debug-macros "^0.3.3"
     babel-plugin-filter-imports "^3.0.0"
     broccoli-concat "^3.7.4"
+    broccoli-debug "^0.6.4"
     broccoli-funnel "^2.0.2"
     broccoli-merge-trees "^3.0.2"
     chalk "^2.4.2"
@@ -10444,7 +10433,7 @@ please-upgrade-node@^3.1.1:
   dependencies:
     semver-compare "^1.0.0"
 
-portfinder@^1.0.23:
+portfinder@^1.0.25:
   version "1.0.25"
   resolved "https://registry.yarnpkg.com/portfinder/-/portfinder-1.0.25.tgz#254fd337ffba869f4b9d37edc298059cb4d35eca"
   integrity sha512-6ElJnHBbxVA1XSLgBp7G1FiCkQdlqGzuF7DswL5tcea+E8UpuvPU7beVAjjRwCioTS9ZluNbu+ZyRvgTsmqEBg==
@@ -11933,7 +11922,7 @@ sort-object-keys@^1.1.3:
   resolved "https://registry.yarnpkg.com/sort-object-keys/-/sort-object-keys-1.1.3.tgz#bff833fe85cab147b34742e45863453c1e190b45"
   integrity sha512-855pvK+VkU7PaKYPc+Jjnmt4EzejQHyhhF33q31qG8x7maDzkeFhAAThdCYay11CISO+qAMwjOBP+fPZe0IPyg==
 
-sort-package-json@^1.22.1:
+sort-package-json@^1.23.1:
   version "1.39.0"
   resolved "https://registry.yarnpkg.com/sort-package-json/-/sort-package-json-1.39.0.tgz#bd3ab45860db99cf22aaabca88bf1a5db8fc5698"
   integrity sha512-/S/iwkf9lcb5Eb/l/BoImDIa4EJWd7is5yJ4oJShh0+sH5Iz5XJRbHpLkNpxuo850uoR6Ygbma9GwfMoEULwEQ==
