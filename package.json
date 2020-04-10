@@ -26,7 +26,7 @@
     "ember-cli-dependency-checker": "3.2.0",
     "ember-cli-eslint": "5.1.0",
     "ember-cli-htmlbars-inline-precompile": "3.0.1",
-    "ember-cli-htmlbars": "4.2.3",
+    "ember-cli-htmlbars": "4.3.1",
     "ember-cli-inject-live-reload": "2.0.2",
     "ember-cli-qunit": "4.4.0",
     "ember-cli-release": "1.0.0-beta.2",
@@ -48,7 +48,7 @@
     "husky": "1.2.1",
     "loader.js": "4.7.0",
     "semantic-release": "15.12.5",
-    "qunit-dom": "1.1.0"
+    "qunit-dom": "1.2.0"
   },
   "keywords": [
     "ember-addon",
