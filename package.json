@@ -43,12 +43,12 @@
     "ember-source": "3.21.1",
     "ember-sublime": "0.0.9",
     "ember-try": "1.2.1",
-    "eslint-plugin-ember": "8.13.0",
+    "eslint-plugin-ember": "8.14.0",
     "eslint-plugin-node": "11.1.0",
     "husky": "1.2.1",
     "loader.js": "4.7.0",
     "semantic-release": "15.12.5",
-    "qunit-dom": "1.4.0"
+    "qunit-dom": "1.5.0"
   },
   "keywords": [
     "ember-addon",
