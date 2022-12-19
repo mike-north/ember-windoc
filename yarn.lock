@@ -1195,6 +1195,13 @@
   resolved "https://registry.yarnpkg.com/@glimmer/env/-/env-0.1.7.tgz#fd2d2b55a9029c6b37a6c935e8c8871ae70dfa07"
   integrity sha512-JKF/a9I9jw6fGoz8kA7LEQslrwJ5jms5CXhu/aqkBWk+PmZ6pTl8mlb/eJ/5ujBGTiQzBhy5AIWF712iA+4/mw==
 
+"@glimmer/interfaces@0.84.2":
+  version "0.84.2"
+  resolved "https://registry.yarnpkg.com/@glimmer/interfaces/-/interfaces-0.84.2.tgz#764cf92c954adcd1a851e5dc68ec1f6b654dc3bd"
+  integrity sha512-tMZxQpOddUVmHEOuripkNqVR7ba0K4doiYnFd4WyswqoHPlxqpBujbIamQ+bWCWEF0U4yxsXKa31ekS/JHkiBQ==
+  dependencies:
+    "@simple-dom/interface" "^1.4.0"
+
 "@glimmer/interfaces@^0.47.9":
   version "0.47.9"
   resolved "https://registry.yarnpkg.com/@glimmer/interfaces/-/interfaces-0.47.9.tgz#4c50b5343815045318bba38915f780ae39f14590"
@@ -1212,6 +1219,25 @@
     handlebars "^4.5.1"
     simple-html-tokenizer "^0.5.9"
 
+"@glimmer/syntax@^0.84.2":
+  version "0.84.2"
+  resolved "https://registry.yarnpkg.com/@glimmer/syntax/-/syntax-0.84.2.tgz#a3f65e51eec20f6adb79c6159d1ad1166fa5bccd"
+  integrity sha512-SPBd1tpIR9XeaXsXsMRCnKz63eLnIZ0d5G9QC4zIBFBC3pQdtG0F5kWeuRVCdfTIFuR+5WBMfk5jvg+3gbQhjg==
+  dependencies:
+    "@glimmer/interfaces" "0.84.2"
+    "@glimmer/util" "0.84.2"
+    "@handlebars/parser" "~2.0.0"
+    simple-html-tokenizer "^0.5.11"
+
+"@glimmer/util@0.84.2":
+  version "0.84.2"
+  resolved "https://registry.yarnpkg.com/@glimmer/util/-/util-0.84.2.tgz#2711ba40f25f44b2ea309cad49f5c2622c6211bc"
+  integrity sha512-VbhzE2s4rmU+qJF3gGBTL1IDjq+/G2Th51XErS8MQVMCmE4CU2pdwSzec8PyOowqCGUOrVIWuMzEI6VoPM4L4w==
+  dependencies:
+    "@glimmer/env" "0.1.7"
+    "@glimmer/interfaces" "0.84.2"
+    "@simple-dom/interface" "^1.4.0"
+
 "@glimmer/util@^0.47.9":
   version "0.47.9"
   resolved "https://registry.yarnpkg.com/@glimmer/util/-/util-0.47.9.tgz#ad3085eba3975bcbc74d28aefc871becbe800417"
@@ -1226,6 +1252,11 @@
   integrity sha512-HS2dEbJ3CgXn56wk/5QdudM7rE3vtNMvPIoG7Rrg+GhkGMNxBCIRxOeEF2g520j9rwlA2LAZFpc7MCDMFbTjNA==
   dependencies:
     babel-plugin-debug-macros "^0.3.4"
+
+"@handlebars/parser@~2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@handlebars/parser/-/parser-2.0.0.tgz#5e8b7298f31ff8f7b260e6b7363c7e9ceed7d9c5"
+  integrity sha512-EP9uEDZv/L5Qh9IWuMUGJRfwhXJ4h1dqKTT4/3+tY0eu7sPis7xh23j61SYUnNF4vqCQvvUXpDo9Bh/+q1zASA==
 
 "@iarna/cli@^2.1.0":
   version "2.1.0"
@@ -2542,6 +2573,11 @@ babel-helpers@^6.24.1:
   dependencies:
     babel-runtime "^6.22.0"
     babel-template "^6.24.1"
+
+babel-import-util@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/babel-import-util/-/babel-import-util-0.2.0.tgz#b468bb679919601a3570f9e317536c54f2862e23"
+  integrity sha512-CtWYYHU/MgK88rxMrLfkD356dApswtR/kWZ/c6JifG1m10e7tBBrs/366dFzWMAoqYmG5/JSh+94tUSpIwh+ag==
 
 babel-import-util@^1.1.0, babel-import-util@^1.2.0:
   version "1.3.0"
@@ -5879,17 +5915,12 @@ ember-qunit@^3.5.0:
     ember-cli-test-loader "^2.2.0"
     qunit "~2.6.0"
 
-ember-resolver@8.0.3:
-  version "8.0.3"
-  resolved "https://registry.yarnpkg.com/ember-resolver/-/ember-resolver-8.0.3.tgz#40f243aa58281bf195c695fe84a6b291e204690a"
-  integrity sha512-fA53fxfG821BRqNiB9mQDuzZpzSRcSAYZTYBlRQOHsJwoYdjyE7idz4YcytbSsa409G5J2kP6B+PiKOBh0odlw==
+ember-resolver@9.0.0:
+  version "9.0.0"
+  resolved "https://registry.yarnpkg.com/ember-resolver/-/ember-resolver-9.0.0.tgz#8438d94f26a127b76f38bccc8ac01eecc92d8b38"
+  integrity sha512-oC8HzL6XyfnLFZfyMgc1gDif5s1IOKLCGesvRO57tZoA92QzXW8eD8WNVMT9reoJPKRhymTFlWnwBmq7iQE3wg==
   dependencies:
-    babel-plugin-debug-macros "^0.3.4"
-    broccoli-funnel "^3.0.8"
-    broccoli-merge-trees "^4.2.0"
-    ember-cli-babel "^7.26.6"
-    ember-cli-version-checker "^5.1.2"
-    resolve "^1.20.0"
+    ember-cli-babel "^7.26.11"
 
 ember-rfc176-data@^0.3.13, ember-rfc176-data@^0.3.15, ember-rfc176-data@^0.3.17:
   version "0.3.17"
@@ -5957,6 +5988,21 @@ ember-sublime@0.0.9:
   integrity sha512-xa3KDStTYzR7K/jzmRtebj5romFKAKv1l9gZktb/Wrae2zv09L6uc9lAwzBk+/rBUFTO9NUiC3oKeN2qmJ9UNw==
   dependencies:
     ember-cli-babel "^5.1.6"
+
+ember-template-imports@^3.1.1:
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/ember-template-imports/-/ember-template-imports-3.4.0.tgz#c40757e2d41e289ce08c0fe80671000bf216e0ef"
+  integrity sha512-3Cwcj3NXA129g3ZhmrQ/nYOxksFonTmB/qxyaSNTHrLBSoc93UZys47hBz13DlcfoeSCCrNt2Qpq1j890I04PQ==
+  dependencies:
+    babel-import-util "^0.2.0"
+    broccoli-stew "^3.0.0"
+    ember-cli-babel-plugin-helpers "^1.1.1"
+    ember-cli-version-checker "^5.1.2"
+    line-column "^1.0.2"
+    magic-string "^0.25.7"
+    parse-static-imports "^1.1.0"
+    string.prototype.matchall "^4.0.6"
+    validate-peer-dependencies "^1.1.0"
 
 ember-template-lint@^1.1.0:
   version "1.14.0"
@@ -6231,17 +6277,20 @@ escape-string-regexp@^1.0.2, escape-string-regexp@^1.0.5:
   resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz#1b61c0562190a8dff6ae3bb2cf0200ca130b86d4"
   integrity sha512-vbRorB5FUQWvla16U8R/qgaFIya2qGzwDrNmCZuYKrbdSUMG6I1ZCGQRefkRVhuOkIGVne7BQ35DSfo1qvJqFg==
 
-eslint-plugin-ember@10.6.1:
-  version "10.6.1"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-ember/-/eslint-plugin-ember-10.6.1.tgz#04ea84cc82307f64a2faa4f2855b30e5ebf9f722"
-  integrity sha512-R+TN3jwhYQ2ytZCA1VkfJDZSGgHFOHjsHU1DrBlRXYRepThe56PpuGxywAyDvQ7inhoAz3e6G6M60PzpvjzmNg==
+eslint-plugin-ember@11.2.1:
+  version "11.2.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-ember/-/eslint-plugin-ember-11.2.1.tgz#be94b1c348ffc7c3dc5cd0106e6c50f69914a48c"
+  integrity sha512-CUC1ZHC2QBksBCMkl9GSCoKcC+IGPkSEhO6qc+R5pW0Llw44m4bEsxoVVNDpZNe/TQRiFmv3Lot9QdtygfAiIw==
   dependencies:
     "@ember-data/rfc395-data" "^0.0.4"
+    "@glimmer/syntax" "^0.84.2"
     css-tree "^2.0.4"
     ember-rfc176-data "^0.3.15"
+    ember-template-imports "^3.1.1"
     eslint-utils "^3.0.0"
     estraverse "^5.2.0"
     lodash.kebabcase "^4.1.1"
+    magic-string "^0.26.7"
     requireindex "^1.2.0"
     snake-case "^3.0.3"
 
@@ -9990,7 +10039,7 @@ magic-string@^0.25.7:
   dependencies:
     sourcemap-codec "^1.4.8"
 
-magic-string@^0.26.0:
+magic-string@^0.26.0, magic-string@^0.26.7:
   version "0.26.7"
   resolved "https://registry.yarnpkg.com/magic-string/-/magic-string-0.26.7.tgz#caf7daf61b34e9982f8228c4527474dac8981d6f"
   integrity sha512-hX9XH3ziStPoPhJxLq1syWuZMxbDvGNbVchfrdCtanC7D13888bMFow61x8axrx+GfHLtVeAx2kxL7tTGRl+Ow==
@@ -13451,7 +13500,7 @@ simple-fmt@~0.1.0:
   resolved "https://registry.yarnpkg.com/simple-fmt/-/simple-fmt-0.1.0.tgz#191bf566a59e6530482cb25ab53b4a8dc85c3a6b"
   integrity sha512-9a3zTDDh9LXbTR37qBhACWIQ/mP/ry5xtmbE98BJM8GR02sanCkfMzp7AdCTqYhkBZggK/w7hJtc8Pb9nmo16A==
 
-simple-html-tokenizer@^0.5.9:
+simple-html-tokenizer@^0.5.11, simple-html-tokenizer@^0.5.9:
   version "0.5.11"
   resolved "https://registry.yarnpkg.com/simple-html-tokenizer/-/simple-html-tokenizer-0.5.11.tgz#4c5186083c164ba22a7b477b7687ac056ad6b1d9"
   integrity sha512-C2WEK/Z3HoSFbYq8tI7ni3eOo/NneSPRoPpcM7WdLjFOArFuyXEjAoCdOC3DgMfRyziZQ1hCNR4mrNdWEvD0og==
@@ -13939,7 +13988,7 @@ string-width@^3.0.0, string-width@^3.1.0:
     is-fullwidth-code-point "^2.0.0"
     strip-ansi "^5.1.0"
 
-string.prototype.matchall@^4.0.5:
+string.prototype.matchall@^4.0.5, string.prototype.matchall@^4.0.6:
   version "4.0.8"
   resolved "https://registry.yarnpkg.com/string.prototype.matchall/-/string.prototype.matchall-4.0.8.tgz#3bf85722021816dcd1bf38bb714915887ca79fd3"
   integrity sha512-6zOCOcJ+RJAQshcTvXPHoxoQGONa3e/Lqx90wUA+wEzX78sg5Bo+1tQo4N0pohS0erG9qtCqJDjNCQBjeWVxyg==
@@ -14912,6 +14961,14 @@ validate-npm-package-name@~2.2.2:
   integrity sha512-zt38kWHt0j/tv8ZKqZB5lEVT3A41JarczU/ib7L+OXZFAjC2l9kPeujQI1m4smU1nmSwF06MqEetltqVkDmnuQ==
   dependencies:
     builtins "0.0.7"
+
+validate-peer-dependencies@^1.1.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/validate-peer-dependencies/-/validate-peer-dependencies-1.2.0.tgz#22aab93c514f4fda457d36c80685e8b1160d2036"
+  integrity sha512-nd2HUpKc6RWblPZQ2GDuI65sxJ2n/UqZwSBVtj64xlWjMx0m7ZB2m9b2JS3v1f+n9VWH/dd1CMhkHfP6pIdckA==
+  dependencies:
+    resolve-package-path "^3.1.0"
+    semver "^7.3.2"
 
 vary@^1, vary@~1.1.2:
   version "1.1.2"
